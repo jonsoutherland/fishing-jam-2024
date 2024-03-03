@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpkgrme62bub6"
+path="res://.godot/imported/bo dooop.wav-64e4f9138559aa5bf7ef751225a9447e.sample"
+
+[deps]
+
+source_file="res://sounds/bo dooop.wav"
+dest_files=["res://.godot/imported/bo dooop.wav-64e4f9138559aa5bf7ef751225a9447e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

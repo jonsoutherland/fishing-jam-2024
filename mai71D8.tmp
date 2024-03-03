@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://bumnldi88c8ty"]
+
+[ext_resource type="Texture2D" uid="uid://c83pv4hw5km" path="res://Assets/background_ui.png" id="1_s8ap8"]
+[ext_resource type="Script" path="res://Exit Button.gd" id="1_u3cm3"]
+[ext_resource type="Texture2D" uid="uid://l46hxyvaf37g" path="res://Assets/Button_compose.png" id="2_cmpy7"]
+[ext_resource type="Texture2D" uid="uid://cmwuw7hwsxe78" path="res://Assets/email_ui.png" id="3_7pht4"]
+[ext_resource type="Script" path="res://Compose Email.gd" id="3_eqqgg"]
+[ext_resource type="Texture2D" uid="uid://dmwoprbcnxwpv" path="res://Assets/button_delete.png" id="3_r5u4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ppmvh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nf1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jujpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx0d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80b6q"]
+
+[node name="Main_Menu" type="Node2D"]
+
+[node name="Exit Button" type="TextureButton" parent="."]
+offset_left = 1098.0
+offset_top = 30.0
+offset_right = 1138.0
+offset_bottom = 70.0
+scale = Vector2(0.602902, 0.598169)
+script = ExtResource("1_u3cm3")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.429, 323.991)
+scale = Vector2(0.599553, 0.600016)
+texture = ExtResource("1_s8ap8")
+
+[node name="Email Background" type="Sprite2D" parent="."]
+position = Vector2(565, 314)
+scale = Vector2(0.56836, 0.568799)
+texture = ExtResource("3_7pht4")
+
+[node name="Email Options" type="HBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 136.0
+offset_bottom = 132.0
+
+[node name="Compose Email" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("2_cmpy7")
+icon_alignment = 1
+script = ExtResource("3_eqqgg")
+
+[node name="Delete Email" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("3_r5u4a")
+icon_alignment = 1
+
+[node name="Inbox" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("3_r5u4a")
+icon_alignment = 1

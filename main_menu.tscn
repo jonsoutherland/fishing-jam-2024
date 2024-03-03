@@ -1,0 +1,544 @@
+[gd_scene load_steps=37 format=3 uid="uid://bumnldi88c8ty"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_op81g"]
+[ext_resource type="Texture2D" uid="uid://c83pv4hw5km" path="res://Assets/background_ui.png" id="1_s8ap8"]
+[ext_resource type="Script" path="res://Exit Button.gd" id="1_u3cm3"]
+[ext_resource type="Texture2D" uid="uid://l46hxyvaf37g" path="res://Assets/Button_compose.png" id="2_cmpy7"]
+[ext_resource type="Texture2D" uid="uid://cmwuw7hwsxe78" path="res://Assets/email_ui.png" id="3_7pht4"]
+[ext_resource type="Script" path="res://Compose Email.gd" id="3_eqqgg"]
+[ext_resource type="Texture2D" uid="uid://qh7j862m471p" path="res://Assets/the real fish.png" id="3_lkwmi"]
+[ext_resource type="Texture2D" uid="uid://dmwoprbcnxwpv" path="res://Assets/button_delete.png" id="3_r5u4a"]
+[ext_resource type="Script" path="res://Email Background.gd" id="4_fv5xl"]
+[ext_resource type="Texture2D" uid="uid://dvsm3h8gbmbel" path="res://Assets/button_inbox.png" id="4_qp2vv"]
+[ext_resource type="Script" path="res://Delete Email.gd" id="8_30nq7"]
+[ext_resource type="Texture2D" uid="uid://hu4foqw0ija6" path="res://Assets/button_send.png" id="10_ccbjs"]
+[ext_resource type="Script" path="res://Inbox.gd" id="10_uy0hp"]
+[ext_resource type="AudioStream" uid="uid://bpkgrme62bub6" path="res://sounds/bo dooop.wav" id="11_8nl0t"]
+[ext_resource type="Script" path="res://Send.gd" id="12_dkdx7"]
+[ext_resource type="AudioStream" uid="uid://b646kigi72oxa" path="res://sounds/doop.wav" id="12_rs2g3"]
+[ext_resource type="FontFile" uid="uid://c7v2gmc1gx762" path="res://Assets/PixeloidMono-d94EV.ttf" id="13_kfrmw"]
+[ext_resource type="AudioStream" uid="uid://ddd0dlsx1scbp" path="res://sounds/doop bo.wav" id="14_iksit"]
+[ext_resource type="Texture2D" uid="uid://c3rn1so2vsjrf" path="res://Assets/button_store.png" id="14_m2oxq"]
+[ext_resource type="Script" path="res://Store.gd" id="16_ey1d6"]
+[ext_resource type="AudioStream" uid="uid://bemqy2ha451i5" path="res://sounds/woosh.wav" id="18_iy1sq"]
+[ext_resource type="Texture2D" uid="uid://bcd0l2igei711" path="res://Assets/loadbar_border.png" id="19_eab8g"]
+[ext_resource type="Texture2D" uid="uid://b5p42i0mx06dm" path="res://Assets/loadbar_fill.png" id="20_trl7b"]
+[ext_resource type="Script" path="res://Money.gd" id="20_y235p"]
+[ext_resource type="Texture2D" uid="uid://df4ex8pfuoi1a" path="res://Assets/crosshair.png" id="23_hqi5r"]
+[ext_resource type="Script" path="res://Cursor.gd" id="24_k37hg"]
+[ext_resource type="Script" path="res://Inbox Scroller.gd" id="25_7w5th"]
+[ext_resource type="Theme" uid="uid://bv2be5ntp3px" path="res://email option.tres" id="28_73o8v"]
+[ext_resource type="Script" path="res://Cyberbank.gd" id="29_fvb8p"]
+[ext_resource type="Script" path="res://Demographic Tier I.gd" id="29_lw0le"]
+[ext_resource type="Script" path="res://TripStar.gd" id="30_633xl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ppmvh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nf1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jujpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx0d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80b6q"]
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_op81g")
+
+[node name="Exit Button" type="TextureButton" parent="."]
+offset_left = 1098.0
+offset_top = 30.0
+offset_right = 1138.0
+offset_bottom = 70.0
+scale = Vector2(0.602902, 0.598169)
+script = ExtResource("1_u3cm3")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.429, 323.991)
+scale = Vector2(0.599553, 0.600016)
+texture = ExtResource("1_s8ap8")
+
+[node name="Dead Fish" type="Sprite2D" parent="Background"]
+position = Vector2(286.165, 61.6793)
+rotation = -3.13555
+scale = Vector2(6.87643, 6.87643)
+texture = ExtResource("3_lkwmi")
+
+[node name="Email Background" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(0.599, 0.6)
+texture = ExtResource("3_7pht4")
+script = ExtResource("4_fv5xl")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 188.0
+offset_bottom = 59.0
+scale = Vector2(6.37227, 5.05227)
+texture_under = ExtResource("19_eab8g")
+texture_progress = ExtResource("20_trl7b")
+
+[node name="Email Options" type="HBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 136.0
+offset_bottom = 132.0
+
+[node name="Compose Email" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("2_cmpy7")
+icon_alignment = 1
+script = ExtResource("3_eqqgg")
+
+[node name="Delete Email" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("3_r5u4a")
+icon_alignment = 1
+script = ExtResource("8_30nq7")
+
+[node name="Inbox" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("4_qp2vv")
+icon_alignment = 1
+script = ExtResource("10_uy0hp")
+
+[node name="Store" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("14_m2oxq")
+icon_alignment = 1
+script = ExtResource("16_ey1d6")
+
+[node name="Send" type="Button" parent="Email Options"]
+layout_mode = 2
+theme_override_colors/icon_hover_color = Color(0.662745, 0.745098, 1, 0.827451)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ppmvh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4nf1h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jujpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xx0d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80b6q")
+icon = ExtResource("10_ccbjs")
+icon_alignment = 1
+script = ExtResource("12_dkdx7")
+
+[node name="Money Info" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 624.0
+offset_top = 64.0
+offset_right = 1124.0
+offset_bottom = 132.0
+alignment = 2
+
+[node name="Dollar Sign" type="Label" parent="Money Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 40
+text = "$"
+
+[node name="Money" type="Label" parent="Money Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 40
+text = "10.30"
+horizontal_alignment = 2
+script = ExtResource("20_y235p")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8nl0t")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_iksit")
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rs2g3")
+
+[node name="Email Send" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_iy1sq")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+texture = ExtResource("23_hqi5r")
+script = ExtResource("24_k37hg")
+
+[node name="Inbox Scroller" type="ScrollContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(300, 200)
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 560.0
+script = ExtResource("25_7w5th")
+
+[node name="Inbox Emails" type="VBoxContainer" parent="Inbox Scroller"]
+layout_mode = 2
+
+[node name="Email 1" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "CONGRATULATIONS!!!"
+
+[node name="Email 2" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 3" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 4" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 5" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 6" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 7" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 8" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 9" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 10" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 11" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 12" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 13" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 14" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 15" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Email 16" type="Button" parent="Inbox Scroller/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+
+[node name="Templates" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(300, 200)
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 560.0
+script = ExtResource("25_7w5th")
+
+[node name="Inbox Emails" type="VBoxContainer" parent="Templates"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+text = "TEMPLATES"
+horizontal_alignment = 1
+
+[node name="CyberBank" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "CyberBank"
+alignment = 0
+script = ExtResource("29_fvb8p")
+
+[node name="TripStar" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "TripStar"
+alignment = 0
+script = ExtResource("30_633xl")
+
+[node name="Email 3" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 4" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 5" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 6" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 7" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 8" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 9" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 10" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 11" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Email 12" type="Button" parent="Templates/Inbox Emails"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Email 1"
+alignment = 0
+
+[node name="Store Items" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(300, 200)
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 560.0
+script = ExtResource("25_7w5th")
+
+[node name="Uprades" type="VBoxContainer" parent="Store Items"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Store Items/Uprades"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+text = "STORE"
+horizontal_alignment = 1
+
+[node name="Demographic Tier I" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Demographic- Tier I"
+alignment = 0
+script = ExtResource("29_lw0le")
+
+[node name="Demographic Tier II" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Demographic- Tier II"
+alignment = 0
+
+[node name="Demographic Tier III" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Demographic- Tier III"
+alignment = 0
+
+[node name="Router Tier I" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Router- Tier I"
+alignment = 0
+
+[node name="Router Tier II" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Router- Tier II"
+alignment = 0
+
+[node name="Router Tier III" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Router- Tier III"
+alignment = 0
+
+[node name="Gaming Chair" type="Button" parent="Store Items/Uprades"]
+layout_mode = 2
+theme = ExtResource("28_73o8v")
+theme_override_fonts/font = ExtResource("13_kfrmw")
+theme_override_font_sizes/font_size = 16
+text = "Gaming Chair"
+alignment = 0
+
+[node name="Phish" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+offset_left = 384.0
+offset_top = 312.0
+offset_right = 1109.0
+offset_bottom = 812.0
+
+[node name="Email Contents" type="VBoxContainer" parent="Phish"]
+custom_minimum_size = Vector2(725, 0)
+layout_mode = 2
+
+[node name="Reciver" type="HBoxContainer" parent="Phish/Email Contents"]
+layout_mode = 2
+
+[node name="To" type="Label" parent="Phish/Email Contents/Reciver"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+text = "TO:"
+
+[node name="OptionButton" type="OptionButton" parent="Phish/Email Contents/Reciver/To"]
+layout_mode = 2
+offset_left = 33.0
+offset_right = 78.0
+offset_bottom = 20.0
+
+[node name="From" type="Label" parent="Phish/Email Contents"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+text = "FROM: EEE"
+
+[node name="Spacer" type="Label" parent="Phish/Email Contents"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+
+[node name="Content" type="Label" parent="Phish/Email Contents"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.380392, 0.337255, 0.639216, 1)
+theme_override_fonts/font = ExtResource("13_kfrmw")
+autowrap_mode = 2
