@@ -16,6 +16,11 @@ func _process(delta):
 		$"../../Phish".visible = true
 		$"../../Inbox Scroller".visible = false
 		$"../../Store Items".visible = false
+		$"../../Upgrade Info".visible = false
+		$"../../Phish/Email Contents/Reciver/To/Recipients".visible = true
+		$"../../Phish/Email Contents/Reciver/To".text = "TO: "
+		$"../../Phish/Email Contents/From".text = "FROM: "
+		$"../../Phish/Email Contents/Content".text = ""
 	if is_hovered() and entered == false:
 		entered = true
 		$"../../Hover".play()

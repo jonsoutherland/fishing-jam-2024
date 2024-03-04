@@ -13,7 +13,10 @@ func _process(delta):
 		$"../../Email Background".visible = false
 		$"../Send".visible = false
 		$"../../Templates".visible = false
-		$"../../ScrollContainer".visible = false
+		$"../../Phish".visible = false
+		$"../../Background/Dead Fish".visible = true
+		$"../../Store Items".visible = false
+		$"../../Upgrade Info".visible = false
 	if is_hovered() and entered == false:
 		entered = true
 		$"../../Hover".play()
